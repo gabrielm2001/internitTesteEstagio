@@ -21,8 +21,11 @@ public class Categoria {
 
     private Long codigo;
 
+    private Boolean ativo;
+
     public Categoria(DadosCadastroCategoria dados){
         this.nome = dados.nome();
         this.codigo = dados.codigo();
+        this.ativo = true;
     }
 }
