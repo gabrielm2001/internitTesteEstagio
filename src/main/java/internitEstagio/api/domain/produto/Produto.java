@@ -38,9 +38,28 @@ public class Produto {
         this.quantidade = dados.quantidade();
         this.descricao = dados.descricao();
         this.imagem = dados.imagem();
-        this.nome = dados.nome();
         this.categoria = categoria;
         this.ativo = true;
     }
 
+    public void atualizar(DadosDetalhamentoProduto dados) {
+        if (dados.codigo() != null){
+            this.codigo = dados.codigo();
+        }else if (dados.descricao() != null){
+            this.descricao = dados.descricao();
+        }else if (dados.imagem() != null){
+            this.descricao = dados.descricao();
+        }else if (dados.status() != null){
+            this.status = dados.status();
+        }else if (dados.nome() != null){
+            this.nome = dados.nome();
+        }else if (dados.quantidade() != null){
+            this.quantidade = dados.quantidade();
+        }
+
+    }
+
+    public void deletar() {
+        this.ativo = false;
+    }
 }
