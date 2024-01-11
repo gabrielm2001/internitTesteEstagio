@@ -28,4 +28,16 @@ public class Categoria {
         this.codigo = dados.codigo();
         this.ativo = true;
     }
+
+    public void atualizar(DadosDetalhamentoCategoria dados) {
+        if (dados.nome() != null){
+            this.nome = dados.nome();
+        }else if (dados.codigo() != null){
+            this.codigo = dados.codigo();
+        }
+    }
+
+    public void deletar() {
+        this.ativo = false;
+    }
 }
