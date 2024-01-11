@@ -3,13 +3,8 @@ package internitEstagio.api.controller;
 import internitEstagio.api.categoria.Categoria;
 import internitEstagio.api.categoria.CategoriaRepository;
 import internitEstagio.api.categoria.DadosCadastroCategoria;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import org.apache.coyote.Response;
+import internitEstagio.api.categoria.DadosDetalhamentoCategoria;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
