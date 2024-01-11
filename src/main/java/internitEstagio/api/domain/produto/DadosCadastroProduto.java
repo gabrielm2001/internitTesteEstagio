@@ -1,8 +1,9 @@
-package internitEstagio.api.produto;
+package internitEstagio.api.domain.produto;
 
 import jakarta.validation.constraints.NotBlank;
+import org.hibernate.validator.constraints.URL;
 
-public record DadosDetalhamentoProduto(
+public record DadosCadastroProduto(
         @NotBlank
         String nome,
         @NotBlank
@@ -14,9 +15,7 @@ public record DadosDetalhamentoProduto(
         @NotBlank
         String descricao,
         @NotBlank
+        @URL
         String imagem
 ) {
-    public DadosDetalhamentoProduto(Produto produto){
-        this(produto.getNome(), produto.getCodigo(), produto.getStatus(), produto.getQuantidade(), produto.getDescricao(), produto.getImagem());
-    }
 }

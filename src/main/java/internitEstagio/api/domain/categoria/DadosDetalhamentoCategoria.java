@@ -1,6 +1,5 @@
-package internitEstagio.api.categoria;
+package internitEstagio.api.domain.categoria;
 
-import internitEstagio.api.categoria.Categoria;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosDetalhamentoCategoria(        @NotNull

@@ -1,4 +1,4 @@
-package internitEstagio.api.produto;
+package internitEstagio.api.domain.produto;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
     Page<Produto> findAllByAtivoTrueAndCategoriaId(Pageable paginacao, Long id);
+
+    Page<Produto> findAllByAtivoTrue(Pageable paginacao);
 }

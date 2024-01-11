@@ -1,6 +1,6 @@
-package internitEstagio.api.produto;
+package internitEstagio.api.domain.produto;
 
-import internitEstagio.api.categoria.Categoria;
+import internitEstagio.api.domain.categoria.Categoria;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

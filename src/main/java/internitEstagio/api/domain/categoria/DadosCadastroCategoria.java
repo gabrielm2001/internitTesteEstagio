@@ -1,4 +1,4 @@
-package internitEstagio.api.categoria;
+package internitEstagio.api.domain.categoria;
 
 import jakarta.validation.constraints.NotNull;
 
