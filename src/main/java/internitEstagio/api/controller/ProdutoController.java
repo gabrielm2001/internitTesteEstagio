@@ -1,10 +1,10 @@
 package internitEstagio.api.controller;
 
-import internitEstagio.api.categoria.CategoriaRepository;
-import internitEstagio.api.produto.DadosCadastroProduto;
-import internitEstagio.api.produto.DadosDetalhamentoProduto;
-import internitEstagio.api.produto.Produto;
-import internitEstagio.api.produto.ProdutoRepository;
+import internitEstagio.api.domain.categoria.CategoriaRepository;
+import internitEstagio.api.domain.produto.DadosCadastroProduto;
+import internitEstagio.api.domain.produto.DadosDetalhamentoProduto;
+import internitEstagio.api.domain.produto.Produto;
+import internitEstagio.api.domain.produto.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -40,4 +40,12 @@ public class ProdutoController {
 
         return ResponseEntity.ok().body(page);
     }
+
+    @GetMapping
+    public ResponseEntity<Page<DadosDetalhamentoProduto>> listarTodosProdutos(Pageable paginacao){
+        var page = produtoRepository.findAllByAtivoTrue(paginacao).map(DadosDetalhamentoProduto::new);
+
+        return ResponseEntity.ok().body(page);
+    }
+
 }
