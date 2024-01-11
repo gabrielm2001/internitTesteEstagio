@@ -48,4 +48,21 @@ public class ProdutoController {
         return ResponseEntity.ok().body(page);
     }
 
+    @PutMapping("/{id}")
+    @Transactional
+    public ResponseEntity atualizar(@PathVariable Long id, @RequestBody DadosDetalhamentoProduto dados){
+        var produto = produtoRepository.getReferenceById(id);
+        produto.atualizar(dados);
+
+        return ResponseEntity.ok().body(new DadosDetalhamentoProduto(produto));
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity deletar(@PathVariable Long id){
+        var produto = produtoRepository.getReferenceById(id);
+        produto.deletar();
+        return ResponseEntity.ok().body(new DadosDetalhamentoProduto(produto));
+    }
+
 }
