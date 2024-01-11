@@ -1,9 +1,9 @@
 package internitEstagio.api.controller;
 
-import internitEstagio.api.categoria.Categoria;
-import internitEstagio.api.categoria.CategoriaRepository;
-import internitEstagio.api.categoria.DadosCadastroCategoria;
-import internitEstagio.api.categoria.DadosDetalhamentoCategoria;
+import internitEstagio.api.domain.categoria.Categoria;
+import internitEstagio.api.domain.categoria.CategoriaRepository;
+import internitEstagio.api.domain.categoria.DadosCadastroCategoria;
+import internitEstagio.api.domain.categoria.DadosDetalhamentoCategoria;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
