@@ -5,6 +5,7 @@ import internitEstagio.api.domain.categoria.CategoriaRepository;
 import internitEstagio.api.domain.categoria.DadosCadastroCategoria;
 import internitEstagio.api.domain.categoria.DadosDetalhamentoCategoria;
 
+import internitEstagio.api.domain.produto.DadosDetalhamentoProduto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -35,6 +36,23 @@ public class CategoriaController {
         var page = categoriaRepository.findAllByAtivoTrue(paginacao).map(DadosDetalhamentoCategoria::new);
 
         return ResponseEntity.ok().body(page);
+    }
+
+    @PutMapping("/{id}")
+    @Transactional
+    public ResponseEntity atualizar(@PathVariable Long id, @RequestBody DadosDetalhamentoCategoria dados){
+        var categoria = categoriaRepository.getReferenceById(id);
+        categoria.atualizar(dados);
+
+        return ResponseEntity.ok().body(new DadosDetalhamentoCategoria(categoria));
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity deletar(@PathVariable Long id){
+        var categoria = categoriaRepository.getReferenceById(id);
+        categoria.deletar();
+        return ResponseEntity.ok().body(new DadosDetalhamentoCategoria(categoria));
     }
 
 }
